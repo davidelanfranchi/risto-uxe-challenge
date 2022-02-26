@@ -1,9 +1,14 @@
-import { Box, Center, Image } from "@chakra-ui/react";
-import logo from "./../img/Cover-Logo.svg";
-import background from "./../img/Cover-Bg-Image.svg";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
-function ViewHeader() {
-  return <header></header>;
+function ViewHeader(props) {
+  return (
+    <Box as="header">
+      <Heading as="h1" size="xl">
+        {props.heading}
+      </Heading>
+      <Text fontSize="md"> {props.text}</Text>
+    </Box>
+  );
 }
 
 export default ViewHeader;
