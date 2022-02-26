@@ -2,7 +2,14 @@ import { extendTheme } from "@chakra-ui/react";
 
 const customTheme = extendTheme({
   fonts: {
-    heading: "Open Sans",
+    heading: "PP Rader",
+  },
+  components: {
+    Heading: {
+      baseStyle: {
+        fontWeight: "400",
+      },
+    },
   },
 });
 
