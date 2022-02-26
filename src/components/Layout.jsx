@@ -23,11 +23,11 @@ function Layout() {
         </GridItem>
       </Show>
       <GridItem bg="white" w="100%" height="100%" p={5}>
-        <div>
+        {/* <div>
           <Link to="/">Home</Link> | <Link to="/category/catId">Category</Link>{" "}
           | <Link to="/ingredient/IngId">Ingredient</Link> |{" "}
           <Link to="/placed">Placed</Link>
-        </div>
+        </div> */}
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
