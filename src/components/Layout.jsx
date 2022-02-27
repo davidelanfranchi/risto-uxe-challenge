@@ -4,6 +4,7 @@ import Cover from "./Cover";
 
 import Home from "./routes/Home";
 import Filter from "./routes/Filter";
+import Review from "./routes/Review";
 import Placed from "./routes/Placed";
 import NotFound from "./routes/NotFound";
 
@@ -28,11 +29,12 @@ function Layout() {
           | <Link to="/ingredient/IngId">Ingredient</Link> |{" "}
           <Link to="/placed">Placed</Link>
         </div> */}
-        <Box as="main" height="100%" overflow="scroll">
+        <Box as="main" height="100%" pos="relative">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="category/:filter" element={<Filter />} />
             <Route path="ingredient/:filter" element={<Filter />} />
+            <Route path="review" element={<Review />} />
             <Route path="placed" element={<Placed />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

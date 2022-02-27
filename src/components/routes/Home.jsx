@@ -13,7 +13,7 @@ import ListFilters from "./../ListFilters";
 
 function Home() {
   return (
-    <Flex direction="column">
+    <Flex direction="column" h="100%" overflow="scroll">
       <Box
         position="sticky"
         w="100%"
