@@ -1,5 +1,6 @@
-import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
-import { Flex, Box, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Routes, Route } from "react-router-dom";
+import { Flex, Box, Show } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
 
 import Cover from "./Cover";
 import TopBar from "./TopBar";
@@ -24,14 +25,16 @@ function Layout() {
           <Show below="lg">
             <TopBar />
           </Show>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="category/:filter" element={<Filter />} />
-            <Route path="ingredient/:filter" element={<Filter />} />
-            <Route path="review" element={<Review />} />
-            <Route path="placed" element={<Placed />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AnimatePresence>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="category/:filter" element={<Filter />} />
+              <Route path="ingredient/:filter" element={<Filter />} />
+              <Route path="review" element={<Review />} />
+              <Route path="placed" element={<Placed />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AnimatePresence>
         </Box>
       </Box>
     </Flex>

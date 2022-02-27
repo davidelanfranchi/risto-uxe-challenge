@@ -1,7 +1,7 @@
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-
 import { Flex, Box, Button } from "@chakra-ui/react";
 
+import RoutesWrapper from "./../RoutesWrapper";
 import Header from "../Header";
 import MealsList from "../MealsList";
 
@@ -27,7 +27,7 @@ function Filter() {
   }
 
   return (
-    <>
+    <RoutesWrapper>
       <Flex direction="column" h="100%" overflow="scroll">
         <Header
           preheading={`${listing}/`}
@@ -60,7 +60,7 @@ function Filter() {
       ) : (
         ""
       )}
-    </>
+    </RoutesWrapper>
   );
 }
 
