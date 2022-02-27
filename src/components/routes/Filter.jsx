@@ -1,5 +1,6 @@
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { Flex, Box, Button } from "@chakra-ui/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import RoutesWrapper from "./../RoutesWrapper";
 import Header from "../Header";
@@ -8,6 +9,8 @@ import MealsList from "../MealsList";
 import { pathToFilter } from "./../../utils/strings";
 
 import { useSelector } from "react-redux";
+
+const MotionBox = motion(Box);
 
 function Filter() {
   let params = useParams();
@@ -39,27 +42,35 @@ function Filter() {
           <MealsList listing={listing} filter={filter} />
         </Box>
       </Flex>
-      {orderCanBePlaced() ? (
-        <Button
-          isFullWidth
-          colorScheme="teal"
-          variant="outline"
-          bg="white"
-          h="60px"
-          borderRadius={"3xl"}
-          boxShadow="md"
-          pos="absolute"
-          bottom="0"
-          right="0"
-          onClick={() => {
-            navigate("/review");
-          }}
-        >
-          Review your order
-        </Button>
-      ) : (
-        ""
-      )}
+      <AnimatePresence>
+        {orderCanBePlaced() ? (
+          <MotionBox
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+          >
+            <Button
+              isFullWidth
+              colorScheme="teal"
+              variant="outline"
+              bg="white"
+              h="60px"
+              borderRadius={"3xl"}
+              boxShadow="md"
+              pos="absolute"
+              bottom="0"
+              right="0"
+              onClick={() => {
+                navigate("/review");
+              }}
+            >
+              Review your order
+            </Button>
+          </MotionBox>
+        ) : (
+          ""
+        )}
+      </AnimatePresence>
     </RoutesWrapper>
   );
 }
