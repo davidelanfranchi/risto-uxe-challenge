@@ -21,7 +21,11 @@ function IllustrationBanner(props) {
         fontWeight="700"
         lineHeight="1.3"
       >
-        {props.message}
+        <span
+          dangerouslySetInnerHTML={{
+            __html: props.message,
+          }}
+        ></span>
       </Text>
     </Center>
   );

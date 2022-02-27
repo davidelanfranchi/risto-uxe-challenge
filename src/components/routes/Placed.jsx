@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
-
 import { useSelector } from "react-redux";
 
-import { Flex, Container, Text, Link } from "@chakra-ui/react";
+import { Flex, Box, Text, Link } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
 
 import RoutesWrapper from "./../RoutesWrapper";
 import Header from "./../Header";
+import IllustrationBanner from "./../IllustrationBanner";
+
+import orderPlacedIllustration from "./../../img/Order-Placed-Illustration.png";
 
 function Placed() {
   let navigate = useNavigate();
@@ -21,13 +23,22 @@ function Placed() {
   return (
     <RoutesWrapper>
       <Flex direction="column" h="100%" overflow="scroll">
-        <Header
-          heading="Your order has been placed!"
-          copy={`You'll be eating in ${mockWaitingTime()} minutes`}
-        />
-        <Container flex="1">
-          <Text fontSize="xl">
-            Our drinks list deserve to be explained! In a few moments our staff
+        <Header heading="Your order has been placed!" textAlignment="center" />
+        <Box flex="1">
+          <IllustrationBanner
+            image={orderPlacedIllustration}
+            message={`You should be eating in <br>${mockWaitingTime()} minutes!`}
+          />
+
+          <Text
+            fontSize="l"
+            textAlign="center"
+            mt={10}
+            maxW="400px"
+            mx="auto"
+            color="teal.700"
+          >
+            Our drinks list deserve to be explained. In a few moments our staff
             will be right there to check that you’ll not be thirsty.
           </Text>
 
@@ -45,7 +56,7 @@ function Placed() {
           >
             Close order <ArrowRightIcon boxSize={3} mx="4px" />
           </Link>
-        </Container>
+        </Box>
       </Flex>
     </RoutesWrapper>
   );

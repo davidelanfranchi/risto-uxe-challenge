@@ -15,6 +15,7 @@ function Header(props) {
       top="0"
       zIndex="1"
       bgColor="rgba(255,255,255,0.8)"
+      textAlign={props.textAlignment}
     >
       {props.preheading ? (
         <Text size="sm" color="teal.600" fontWeight="semibold">
