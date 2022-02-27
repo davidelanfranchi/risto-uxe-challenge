@@ -32,7 +32,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { updateOrder } from "./../store/orderSlice";
 
-import imageFallback from "./../img/Meal-Image-Fallback.svg";
+import imageFallback from "./../img/Meal-Image-Fallback.png";
 
 function ListItemMeal(props) {
   // Local state

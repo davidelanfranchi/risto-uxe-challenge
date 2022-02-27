@@ -1,14 +1,13 @@
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { Flex, Box, Button } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
+import { Flex, Box, Button } from "@chakra-ui/react";
 
 import RoutesWrapper from "./../RoutesWrapper";
 import Header from "../Header";
 import MealsList from "../MealsList";
 
 import { pathToFilter } from "./../../utils/strings";
-
-import { useSelector } from "react-redux";
 
 const MotionBox = motion(Box);
 
@@ -42,6 +41,7 @@ function Filter() {
           <MealsList listing={listing} filter={filter} />
         </Box>
       </Flex>
+
       <AnimatePresence>
         {orderCanBePlaced() ? (
           <MotionBox
