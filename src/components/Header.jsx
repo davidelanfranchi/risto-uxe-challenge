@@ -16,9 +16,15 @@ function Header(props) {
       zIndex="1"
       bgColor="rgba(255,255,255,0.8)"
     >
-      {props.preheading ? <Text size="md">{props.preheading}</Text> : ""}
+      {props.preheading ? (
+        <Text size="sm" color="teal.600" fontWeight="semibold">
+          {props.preheading}
+        </Text>
+      ) : (
+        ""
+      )}
       {props.heading ? (
-        <Heading as="h1" size="xl">
+        <Heading as="h1" size="xl" color="teal.600">
           {props.heading}
         </Heading>
       ) : (

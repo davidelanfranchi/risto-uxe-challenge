@@ -1,3 +1,6 @@
+// Theme tokens
+// https://github.com/chakra-ui/chakra-ui/tree/main/packages/theme/src/foundations
+
 import { extendTheme } from "@chakra-ui/react";
 
 const customTheme = extendTheme({
@@ -22,6 +25,9 @@ const customTheme = extendTheme({
           },
         },
       },
+    },
+    variants: {
+      solid: {},
     },
   },
 });

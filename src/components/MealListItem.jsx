@@ -32,6 +32,8 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { updateOrder } from "./../store/orderSlice";
 
+import imageFallback from "./../img/Meal-Image-Fallback.svg";
+
 function ListItemMeal(props) {
   // Local state
   const [localCount, setLocalCount] = useState(0);
@@ -79,9 +81,6 @@ function ListItemMeal(props) {
         className={props.isFirst ? "first" : ""}
       >
         <Flex alignItems="center" pos="relative">
-          <Text pos="absolute" top="0" right="0" color="gray.400">
-            {getCountFromStore() > 0 ? `x ${getCountFromStore()}` : ""}
-          </Text>
           <Box w="150px">
             <Skeleton isLoaded={!props.isLoading}>
               <AspectRatio
@@ -101,6 +100,7 @@ function ListItemMeal(props) {
                   alt={
                     props.meal && props.meal.strMeal ? props.meal.strMeal : ""
                   }
+                  fallbackSrc={imageFallback}
                 />
               </AspectRatio>
             </Skeleton>
@@ -123,7 +123,7 @@ function ListItemMeal(props) {
                 aria-label={`Add ${
                   props.meal && props.meal.strMeal ? props.meal.strMeal : ""
                 } to the order`}
-                colorScheme={getCountFromStore() > 0 ? "teal" : "gray"}
+                colorScheme={getCountFromStore() > 0 ? "teal" : "yellow"}
                 size="md"
                 icon={
                   getCountFromStore() > 0 ? <CheckIcon /> : <SmallAddIcon />
@@ -132,6 +132,10 @@ function ListItemMeal(props) {
               />
             </Skeleton>
           </Box>
+
+          <Text pos="absolute" top="0" right="0" color="gray.500">
+            {getCountFromStore() > 0 ? `x ${getCountFromStore()}` : ""}
+          </Text>
         </Flex>
       </ListItem>
 

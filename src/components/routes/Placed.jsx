@@ -15,10 +15,7 @@ function Placed() {
   const order = useSelector((state) => state.order);
 
   function mockWaitingTime() {
-    const mealsCount = Object.keys(order.meals).length;
-    const maxWaitingTime = 30;
-    const averageMealPreparationTime = 8;
-    return Math.min(maxWaitingTime, mealsCount * averageMealPreparationTime);
+    return Math.floor(Math.random() * (30 - 10 + 1) + 10);
   }
 
   return (
@@ -46,7 +43,7 @@ function Placed() {
             lineHeight="60px"
             textAlign="center"
           >
-            Start over <ArrowRightIcon boxSize={3} mx="4px" />
+            Close order <ArrowRightIcon boxSize={3} mx="4px" />
           </Link>
         </Container>
       </Flex>
