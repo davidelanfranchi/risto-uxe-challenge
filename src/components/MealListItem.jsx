@@ -29,26 +29,38 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
+import { useSelector, useDispatch } from "react-redux";
+import { updateOrder } from "./../store/orderSlice";
+
 function ListItemMeal(props) {
-  const [selected, setSelected] = useState(false);
+  // Local state
   const [count, setCount] = useState(0);
+  // Shared state
+  const order = useSelector((state) => state.order);
+  const dispatch = useDispatch();
 
-  const onButtonClick = (e) => {
-    setSelected(!selected);
-    if (!selected) {
-      onModalOpen();
+  function getCountFromStore() {
+    if (!props.meal) {
+      return;
     }
-  };
+    const mealKey = `id-${props.meal.idMeal}`;
+    return order.meals[mealKey] ? order.meals[mealKey].count : null;
+  }
 
+  // Modal hooks
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   function onModalOpen() {
-    // console.log("Modal Open");
     onOpen();
   }
   function onModalClose() {
-    // console.log("Modal Close");
     onClose();
+    dispatch(
+      updateOrder({
+        ...props.meal,
+        count: count,
+      })
+    );
   }
 
   return (
@@ -106,10 +118,12 @@ function ListItemMeal(props) {
                 aria-label={`Add ${
                   props.meal && props.meal.strMeal ? props.meal.strMeal : ""
                 } to the order`}
-                colorScheme={selected ? "teal" : "gray"}
+                colorScheme={getCountFromStore() > 0 ? "teal" : "gray"}
                 size="md"
-                icon={selected ? <CheckIcon /> : <SmallAddIcon />}
-                onClick={onButtonClick}
+                icon={
+                  getCountFromStore() > 0 ? <CheckIcon /> : <SmallAddIcon />
+                }
+                onClick={onModalOpen}
               />
             </Skeleton>
           </Box>
@@ -173,7 +187,11 @@ function ListItemMeal(props) {
                   }}
                 />
               </HStack>
-              <Button colorScheme="teal" isFullWidth={true} onClick={onClose}>
+              <Button
+                colorScheme="teal"
+                isFullWidth={true}
+                onClick={onModalClose}
+              >
                 Confirm
               </Button>
             </ModalFooter>
