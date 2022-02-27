@@ -54,7 +54,7 @@ function Placed() {
             lineHeight="60px"
             textAlign="center"
           >
-            Close order <ArrowRightIcon boxSize={3} mx="4px" />
+            Start over <ArrowRightIcon boxSize={3} mx="4px" />
           </Link>
         </Box>
       </Flex>

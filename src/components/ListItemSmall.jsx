@@ -5,8 +5,7 @@ import {
   Skeleton,
   Flex,
   Box,
-  LinkBox,
-  Heading,
+  Text,
   IconButton,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
@@ -30,9 +29,14 @@ function ListItemSmall(props) {
       <Flex alignItems="center">
         <Box flex="1">
           <Skeleton isLoaded={!props.isLoading}>
-            <Heading fontSize="2xl">
+            <Text
+              fontSize="2xl"
+              fontWeight="700"
+              color="teal.800"
+              lineHeight="1.2"
+            >
               {props.label ? props.label : `Loading...`}
-            </Heading>
+            </Text>
           </Skeleton>
         </Box>
 

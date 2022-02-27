@@ -13,7 +13,7 @@ import NotFound from "./routes/NotFound";
 
 function Layout() {
   return (
-    <Flex w="100%" height="100vh" p={[2, 5, 5, 10, 20]} overflow="hidden">
+    <Flex w="100%" height="100vh" p={[2, 5, 5, 10]} overflow="hidden">
       <Show above="lg">
         <Box w="100%" height="100%">
           <Cover />

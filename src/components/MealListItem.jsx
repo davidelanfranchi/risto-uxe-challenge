@@ -5,7 +5,7 @@ import {
   Skeleton,
   Flex,
   Box,
-  Heading,
+  Text,
   IconButton,
   Image,
   HStack,
@@ -20,7 +20,6 @@ import {
   ModalCloseButton,
   Button,
   AspectRatio,
-  Text,
 } from "@chakra-ui/react";
 import {
   SmallAddIcon,
@@ -108,11 +107,16 @@ function ListItemMeal(props) {
 
           <Box ml="5" flex="1">
             <Skeleton isLoaded={!props.isLoading}>
-              <Heading fontSize="xl">
+              <Text
+                fontSize="xl"
+                fontWeight="700"
+                color="teal.800"
+                lineHeight="1.2"
+              >
                 {props.meal && props.meal.strMeal
                   ? props.meal.strMeal
                   : `Loading...`}
-              </Heading>
+              </Text>
             </Skeleton>
           </Box>
 

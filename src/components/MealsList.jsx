@@ -90,7 +90,7 @@ function MealsList(props) {
     );
   } else {
     return (
-      <List>
+      <List mb={[36, 36, 36, 20]}>
         {items.map((item, index) => (
           <MealListItem
             key={`${props.filter}-${index}`}
