@@ -43,6 +43,8 @@ function Filter() {
         <Button
           isFullWidth
           colorScheme="teal"
+          variant="outline"
+          bg="white"
           h="60px"
           borderRadius={"3xl"}
           boxShadow="md"

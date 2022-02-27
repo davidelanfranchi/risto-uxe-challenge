@@ -1,21 +1,36 @@
-import { Link } from "react-router-dom";
-import {
-  Flex,
-  Box,
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-} from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { Flex, Box, Button } from "@chakra-ui/react";
+
 import Header from "./../Header";
+import OrderList from "./../OrderList";
 
 function Review() {
+  let navigate = useNavigate();
+
+  function placeOrder() {
+    console.log("order placed");
+    // TBD: Place order! 🎉
+    navigate("/placed");
+  }
   return (
     <Flex direction="column" h="100%" overflow="scroll">
-      <Header heading="Your Order" copy="Review your order before" backButton />
-      <Box flex="1" h="2000px">
-        content
+      <Header heading="Your Order" backButton />
+      <Box flex="1">
+        <OrderList />
+
+        <Button
+          isFullWidth
+          colorScheme="teal"
+          h="60px"
+          borderRadius={"3xl"}
+          boxShadow="md"
+          pos="absolute"
+          bottom="0"
+          right="0"
+          onClick={placeOrder}
+        >
+          Place your order
+        </Button>
       </Box>
     </Flex>
   );

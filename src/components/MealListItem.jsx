@@ -34,17 +34,21 @@ import { updateOrder } from "./../store/orderSlice";
 
 function ListItemMeal(props) {
   // Local state
-  const [count, setCount] = useState(0);
+  const [localCount, setLocalCount] = useState(0);
   // Shared state
   const order = useSelector((state) => state.order);
   const dispatch = useDispatch();
 
   function getCountFromStore() {
+    console.log("getc");
     if (!props.meal) {
       return;
     }
     const mealKey = `id-${props.meal.idMeal}`;
-    return order.meals[mealKey] ? order.meals[mealKey].count : null;
+    const count = order.meals[mealKey] ? order.meals[mealKey].count : 0;
+
+    // setLocalCount(count);
+    return count;
   }
 
   // Modal hooks
@@ -52,15 +56,17 @@ function ListItemMeal(props) {
 
   function onModalOpen() {
     onOpen();
+    setLocalCount(getCountFromStore());
   }
   function onModalClose() {
     onClose();
     dispatch(
       updateOrder({
         ...props.meal,
-        count: count,
+        count: localCount,
       })
     );
+    setLocalCount(getCountFromStore());
   }
 
   return (
@@ -75,7 +81,7 @@ function ListItemMeal(props) {
       >
         <Flex alignItems="center" pos="relative">
           <Text pos="absolute" top="0" right="0" color="gray.400">
-            {count > 0 ? `x ${count}` : ""}
+            {getCountFromStore() > 0 ? `x ${getCountFromStore()}` : ""}
           </Text>
           <Box w="150px">
             <Skeleton isLoaded={!props.isLoading}>
@@ -164,8 +170,8 @@ function ListItemMeal(props) {
                   bg="white"
                   icon={<ChevronLeftIcon />}
                   onClick={() => {
-                    if (count > 0) {
-                      setCount(count - 1);
+                    if (localCount > 0) {
+                      setLocalCount(localCount - 1);
                     }
                   }}
                 />
@@ -173,7 +179,7 @@ function ListItemMeal(props) {
                   variant="unstyled"
                   isReadOnly={true}
                   textAlign="center"
-                  value={count}
+                  value={localCount}
                 />
                 <IconButton
                   variant="outline"
@@ -181,8 +187,8 @@ function ListItemMeal(props) {
                   icon={<ChevronRightIcon />}
                   onClick={() => {
                     // TBD: add message to explainf that the order is limited to 10 meal via tablet for organisation reasons - Ask to a waiter
-                    if (count < 10) {
-                      setCount(count + 1);
+                    if (localCount < 10) {
+                      setLocalCount(localCount + 1);
                     }
                   }}
                 />
