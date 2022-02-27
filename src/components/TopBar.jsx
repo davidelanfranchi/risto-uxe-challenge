@@ -1,7 +1,7 @@
 import { Flex, Box, Center, Image, Link, Icon } from "@chakra-ui/react";
 
 import IconHome from "./icons/IconHome";
-import logo from "./../img/logo.svg";
+import logo from "../img/Logo.svg";
 
 function TopBar() {
   return (
