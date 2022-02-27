@@ -10,7 +10,7 @@ function Header(props) {
     <Box
       as="header"
       p={5}
-      position="sticky"
+      position={["relative", null, null, "sticky"]}
       w="100%"
       top="0"
       zIndex="1"

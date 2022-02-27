@@ -40,7 +40,6 @@ function ListItemMeal(props) {
   const dispatch = useDispatch();
 
   function getCountFromStore() {
-    console.log("getc");
     if (!props.meal) {
       return;
     }

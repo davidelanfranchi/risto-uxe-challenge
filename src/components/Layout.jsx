@@ -1,6 +1,8 @@
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import { Flex, Box, Grid, GridItem, Show } from "@chakra-ui/react";
+
 import Cover from "./Cover";
+import TopBar from "./TopBar";
 
 import Home from "./routes/Home";
 import Filter from "./routes/Filter";
@@ -10,26 +12,18 @@ import NotFound from "./routes/NotFound";
 
 function Layout() {
   return (
-    <Flex
-      //templateColumns="repeat(2, 1fr)"
-      //gap={10}
-      w="100%"
-      height="100vh"
-      p={10}
-      overflow="hidden"
-    >
+    <Flex w="100%" height="100vh" p={[2, 5, 5, 10, 20]} overflow="hidden">
       <Show above="lg">
         <Box w="100%" height="100%">
           <Cover />
         </Box>
       </Show>
-      <Box bg="white" w="100%" height="100%" pl={5}>
-        {/* <div>
-          <Link to="/">Home</Link> | <Link to="/category/catId">Category</Link>{" "}
-          | <Link to="/ingredient/IngId">Ingredient</Link> |{" "}
-          <Link to="/placed">Placed</Link>
-        </div> */}
+
+      <Box bg="white" w="100%" height="100%" pl={[0, 0, 0, 5]}>
         <Box as="main" height="100%" pos="relative">
+          <Show below="lg">
+            <TopBar />
+          </Show>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="category/:filter" element={<Filter />} />
