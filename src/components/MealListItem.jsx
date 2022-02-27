@@ -91,7 +91,7 @@ function ListItemMeal(props) {
 
           <Box ml="5" flex="1">
             <Skeleton isLoaded={!props.isLoading}>
-              <Heading fontSize="xl" mb="1em">
+              <Heading fontSize="xl">
                 {props.meal && props.meal.strMeal
                   ? props.meal.strMeal
                   : `Loading...`}
