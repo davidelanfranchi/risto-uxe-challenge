@@ -8,8 +8,8 @@ function Review() {
   let navigate = useNavigate();
 
   function placeOrder() {
-    console.log("order placed");
     // TBD: Place order! 🎉
+    // Send love to the Kitchen, save analytics data, etc.
     navigate("/placed");
   }
   return (

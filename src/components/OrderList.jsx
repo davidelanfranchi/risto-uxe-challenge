@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { Box, List, Alert, AlertIcon, Button } from "@chakra-ui/react";
+import { List } from "@chakra-ui/react";
 import MealListItem from "./MealListItem";
 
 function OrderList(props) {
