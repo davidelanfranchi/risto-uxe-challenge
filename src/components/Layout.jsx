@@ -3,8 +3,7 @@ import { Flex, Box, Grid, GridItem, Show } from "@chakra-ui/react";
 import Cover from "./Cover";
 
 import Home from "./routes/Home";
-import Category from "./routes/Category";
-import Ingredient from "./routes/Ingredient";
+import Filter from "./routes/Filter";
 import Placed from "./routes/Placed";
 import NotFound from "./routes/NotFound";
 
@@ -32,8 +31,8 @@ function Layout() {
         <Box as="main" height="100%" overflow="scroll">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="category/:filter" element={<Category />} />
-            <Route path="ingredient/:filter" element={<Ingredient />} />
+            <Route path="category/:filter" element={<Filter />} />
+            <Route path="ingredient/:filter" element={<Filter />} />
             <Route path="placed" element={<Placed />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

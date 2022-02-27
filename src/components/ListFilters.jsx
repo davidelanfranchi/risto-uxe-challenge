@@ -4,7 +4,7 @@ import { List } from "@chakra-ui/react";
 
 import ListItemSmall from "./ListItemSmall";
 
-import { ingredientToPath } from "./../utils/strings";
+import { filterToPath } from "./../utils/strings";
 
 function ListFilters(props) {
   const [error, setError] = useState(null);
@@ -55,7 +55,7 @@ function ListFilters(props) {
             routerPath={
               props.filter === "c"
                 ? `/category/${item.strCategory}`
-                : `/ingredient/${ingredientToPath(item.strIngredient)}`
+                : `/ingredient/${filterToPath(item.strIngredient)}`
             }
           />
         ))}
