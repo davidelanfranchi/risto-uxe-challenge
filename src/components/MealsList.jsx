@@ -23,8 +23,6 @@ function MealsList(props) {
       .then(
         (result) => {
           setIsLoaded(true);
-          console.log(result.meals);
-          console.log(items);
           if (result.meals === null) {
             setIsEmpty(true);
           }

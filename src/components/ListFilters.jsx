@@ -54,7 +54,7 @@ function ListFilters(props) {
             isLast={index === items.length - 1}
             routerPath={
               props.filter === "c"
-                ? `/category/${item.strCategory}`
+                ? `/category/${filterToPath(item.strCategory)}`
                 : `/ingredient/${filterToPath(item.strIngredient)}`
             }
           />
