@@ -2,7 +2,7 @@ import { useParams, useLocation, useNavigate } from "react-router-dom";
 
 import { Flex, Box, Button } from "@chakra-ui/react";
 
-import ViewListHeader from "../ViewListHeader";
+import Header from "../Header";
 import MealsList from "../MealsList";
 
 import { pathToFilter } from "./../../utils/strings";
@@ -29,18 +29,12 @@ function Filter() {
   return (
     <>
       <Flex direction="column" h="100%" overflow="scroll">
-        <Box
-          position="sticky"
-          w="100%"
-          top="0"
-          zIndex="1"
-          bgColor="rgba(255,255,255,0.8)"
-        >
-          <ViewListHeader
-            preheading={`${listing}/`}
-            heading={pathToFilter(filter)}
-          />
-        </Box>
+        <Header
+          preheading={`${listing}/`}
+          heading={pathToFilter(filter)}
+          backButton
+        />
+
         <Box flex="1">
           <MealsList listing={listing} filter={filter} />
         </Box>

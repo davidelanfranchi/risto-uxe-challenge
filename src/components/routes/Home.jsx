@@ -8,21 +8,14 @@ import {
   Tab,
   TabPanel,
 } from "@chakra-ui/react";
-import ViewHeader from "./../ViewHeader";
+import Header from "./../Header";
 import ListFilters from "./../ListFilters";
 
 function Home() {
   return (
     <Flex direction="column" h="100%" overflow="scroll">
-      <Box
-        position="sticky"
-        w="100%"
-        top="0"
-        zIndex="1"
-        bgColor="rgba(255,255,255,0.8)"
-      >
-        <ViewHeader heading="Welcome, food explorer" />
-      </Box>
+      <Header heading="Welcome, food explorer" />
+
       <Box flex="1">
         <Tabs isFitted variant="enclosed">
           <TabList px={5}>
