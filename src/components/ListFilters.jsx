@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { List } from "@chakra-ui/react";
 
-import CategoryListItem from "./CategoryListItem";
+import ListFiltersItem from "./ListFiltersItem";
 
 import { filterToPath } from "./../utils/strings";
 
@@ -34,7 +34,7 @@ function ListFilters(props) {
     return (
       <List>
         {[...Array(8)].map((item, index) => (
-          <CategoryListItem
+          <ListFiltersItem
             key={`${props.filter}-${index}`}
             isLoading={true}
             isFirst={index === 0}
@@ -47,7 +47,7 @@ function ListFilters(props) {
     return (
       <List>
         {items.map((item, index) => (
-          <CategoryListItem
+          <ListFiltersItem
             key={`${props.filter}-${index}`}
             label={props.filter === "c" ? item.strCategory : item.strIngredient}
             isFirst={index === 0}

@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
-function CategoryListItem(props) {
+function ListFiltersItem(props) {
   const navigate = useNavigate();
 
   const onButtonClick = (e) => {
@@ -57,4 +57,4 @@ function CategoryListItem(props) {
   );
 }
 
-export default CategoryListItem;
+export default ListFiltersItem;

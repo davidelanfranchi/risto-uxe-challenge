@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 import { Box, List, Alert, AlertIcon, Button, Text } from "@chakra-ui/react";
 
-import MealListItem from "./MealListItem";
+import ListMealsItem from "./ListMealsItem";
 
-function MealsList(props) {
+function ListMeals(props) {
   let navigate = useNavigate();
 
   const [error, setError] = useState(null);
@@ -79,7 +79,7 @@ function MealsList(props) {
     return (
       <List>
         {[...Array(8)].map((item, index) => (
-          <MealListItem
+          <ListMealsItem
             key={`${props.filter}-${index}`}
             isLoading={true}
             isFirst={index === 0}
@@ -103,7 +103,7 @@ function MealsList(props) {
         </Text>
         <List mb={{ base: "36", lg: "20" }}>
           {items.map((item, index) => (
-            <MealListItem
+            <ListMealsItem
               key={`${props.filter}-${index}`}
               meal={item}
               isFirst={index === 0}
@@ -116,4 +116,4 @@ function MealsList(props) {
   }
 }
 
-export default MealsList;
+export default ListMeals;

@@ -5,7 +5,7 @@ import { Flex, Box, Button } from "@chakra-ui/react";
 
 import RoutesWrapper from "./../RoutesWrapper";
 import Header from "../Header";
-import MealsList from "../MealsList";
+import ListMeals from "../ListMeals";
 
 import { pathToFilter } from "./../../utils/strings";
 
@@ -38,7 +38,7 @@ function Filter() {
         />
 
         <Box flex="1">
-          <MealsList listing={listing} filter={filter} />
+          <ListMeals listing={listing} filter={filter} />
         </Box>
       </Flex>
 

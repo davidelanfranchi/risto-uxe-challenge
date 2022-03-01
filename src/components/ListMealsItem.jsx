@@ -29,7 +29,7 @@ import {
 } from "@chakra-ui/icons";
 
 import { useSelector, useDispatch } from "react-redux";
-import { updateOrder } from "./../store/orderSlice";
+import { updateOrder } from "../store/orderSlice";
 
 import imageFallback from "./../img/Meal-Image-Fallback.png";
 
