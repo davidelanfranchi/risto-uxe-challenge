@@ -79,7 +79,7 @@ function ListItemMeal(props) {
         borderColor="gray.200"
         className={props.isFirst ? "first" : ""}
       >
-        <Flex alignItems="center" pos="relative">
+        <Flex alignItems="flex-start" pos="relative">
           <Box w={{ base: "80px", md: "110px" }}>
             <Skeleton isLoaded={!props.isLoading}>
               <AspectRatio borderRadius={10} overflow="hidden" ratio={1 / 1}>
@@ -102,6 +102,9 @@ function ListItemMeal(props) {
 
           <Box ml="5" flex="1">
             <Skeleton isLoaded={!props.isLoading}>
+              <Text fontSize={"xs"} fontWeight="600" color="gray.400">
+                Geographical Area
+              </Text>
               <Text
                 fontSize={{ base: "md", md: "xl" }}
                 fontWeight="700"
@@ -111,6 +114,9 @@ function ListItemMeal(props) {
                 {props.meal && props.meal.strMeal
                   ? props.meal.strMeal
                   : `Loading...`}
+              </Text>
+              <Text fontSize={"xs"} fontWeight="600" color="gray.400">
+                18.00 £
               </Text>
             </Skeleton>
           </Box>
@@ -132,7 +138,14 @@ function ListItemMeal(props) {
             </Skeleton>
           </Box>
 
-          <Text pos="absolute" top="0" right="0" color="gray.500">
+          <Text
+            fontSize={"xs"}
+            fontWeight="600"
+            color="gray.400"
+            pos="absolute"
+            bottom="0"
+            right="0"
+          >
             {getCountFromStore() > 0 ? `x ${getCountFromStore()}` : ""}
           </Text>
         </Flex>
