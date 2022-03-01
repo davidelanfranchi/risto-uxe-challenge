@@ -1,4 +1,4 @@
-import { Flex, Box, Center, Image, Link, Icon } from "@chakra-ui/react";
+import { Flex, Box, Image, Link } from "@chakra-ui/react";
 
 import IconHome from "./icons/IconHome";
 import logo from "../img/Logo.svg";
@@ -17,7 +17,9 @@ function TopBar() {
       </Box>
 
       <Box color="green.700">
-        <IconHome />
+        <Link href="/">
+          <IconHome />
+        </Link>
       </Box>
     </Flex>
   );

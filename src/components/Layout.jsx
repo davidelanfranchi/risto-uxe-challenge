@@ -20,7 +20,7 @@ function Layout() {
         </Box>
       </Show>
 
-      <Box bg="white" w="100%" height="100%" pl={[0, 0, 0, 5]}>
+      <Box w="100%" height="100%" pl={[0, 0, 0, 5]}>
         <Box as="main" height="100%" pos="relative">
           <Show below="lg">
             <TopBar />

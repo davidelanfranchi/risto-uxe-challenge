@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
-function ListItemSmall(props) {
+function CategoryListItem(props) {
   const navigate = useNavigate();
 
   const onButtonClick = (e) => {
@@ -21,16 +21,16 @@ function ListItemSmall(props) {
     <ListItem
       borderTopRadius={props.isFirst ? `3xl` : ""}
       borderBottomRadius={props.isLast ? `3xl` : ""}
-      p="8"
+      p={{ base: "4", lg: "8" }}
       border="1px"
       borderColor="gray.200"
       className={props.isFirst ? "first" : ""}
     >
-      <Flex alignItems="center">
-        <Box flex="1">
+      <Flex alignItems="center" minH="40px">
+        <Box flex="1" mr="5">
           <Skeleton isLoaded={!props.isLoading}>
             <Text
-              fontSize="2xl"
+              fontSize={{ base: "md", md: "xl" }}
               fontWeight="700"
               color="teal.800"
               lineHeight="1.2"
@@ -40,7 +40,7 @@ function ListItemSmall(props) {
           </Skeleton>
         </Box>
 
-        <Box ml="5">
+        <Box>
           {" "}
           <Skeleton isLoaded={!props.isLoading}>
             <IconButton
@@ -57,4 +57,4 @@ function ListItemSmall(props) {
   );
 }
 
-export default ListItemSmall;
+export default CategoryListItem;

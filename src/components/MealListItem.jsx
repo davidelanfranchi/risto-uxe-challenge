@@ -74,20 +74,15 @@ function ListItemMeal(props) {
       <ListItem
         borderTopRadius={props.isFirst ? `3xl` : ""}
         borderBottomRadius={props.isLast ? `3xl` : ""}
-        p="8"
+        p={{ base: "4", lg: "8" }}
         border="1px"
         borderColor="gray.200"
         className={props.isFirst ? "first" : ""}
       >
         <Flex alignItems="center" pos="relative">
-          <Box w="150px">
+          <Box w={{ base: "80px", md: "110px" }}>
             <Skeleton isLoaded={!props.isLoading}>
-              <AspectRatio
-                maxW="400px"
-                borderRadius={10}
-                overflow="hidden"
-                ratio={1 / 1}
-              >
+              <AspectRatio borderRadius={10} overflow="hidden" ratio={1 / 1}>
                 <Image
                   objectFit="cover"
                   borderRadius={10}
@@ -108,7 +103,7 @@ function ListItemMeal(props) {
           <Box ml="5" flex="1">
             <Skeleton isLoaded={!props.isLoading}>
               <Text
-                fontSize="xl"
+                fontSize={{ base: "md", md: "xl" }}
                 fontWeight="700"
                 color="teal.800"
                 lineHeight="1.2"
@@ -148,7 +143,7 @@ function ListItemMeal(props) {
           <ModalOverlay />
           <ModalContent>
             <ModalHeader pr="50px">{props.meal.strMeal}</ModalHeader>
-            <ModalCloseButton />
+            <ModalCloseButton variant="outline" />
             <ModalBody>
               <AspectRatio
                 maxW="400px"

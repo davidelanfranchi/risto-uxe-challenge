@@ -31,7 +31,7 @@ function Placed() {
           />
 
           <Text
-            fontSize="l"
+            fontSize="md"
             textAlign="center"
             mt={10}
             maxW="400px"

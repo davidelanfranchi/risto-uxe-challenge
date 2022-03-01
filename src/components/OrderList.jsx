@@ -8,7 +8,7 @@ function OrderList(props) {
   const order = useSelector((state) => state.order);
 
   return (
-    <List mb={[36, 36, 36, 20]}>
+    <List mb={{ base: "36", lg: "20" }}>
       {Object.keys(order.meals).map((item, index) => (
         <MealListItem
           key={`order-list-key-${index}`}

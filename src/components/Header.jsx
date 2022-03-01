@@ -16,6 +16,7 @@ function Header(props) {
       zIndex="1"
       bgColor="rgba(255,255,255,0.8)"
       textAlign={props.textAlignment}
+      mb={{ base: "0", lg: "5" }}
     >
       {props.preheading ? (
         <Text size="sm" color="teal.600" fontWeight="semibold">
@@ -31,7 +32,14 @@ function Header(props) {
       ) : (
         ""
       )}
-      {props.copy ? <Text fontSize="md"> {props.copy}</Text> : ""}
+      {props.copy ? (
+        <Text fontSize="md" color="teal.600">
+          {" "}
+          {props.copy}
+        </Text>
+      ) : (
+        ""
+      )}
       {props.backButton ? (
         <IconButton
           aria-label={`Go Back`}

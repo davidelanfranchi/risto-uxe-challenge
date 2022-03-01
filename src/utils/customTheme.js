@@ -20,7 +20,7 @@ const customTheme = extendTheme({
             color: "gray.400",
             fontWeight: "bold",
             _selected: {
-              color: "green.700",
+              color: "teal.700",
             },
           },
         },

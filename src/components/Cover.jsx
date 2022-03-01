@@ -19,13 +19,13 @@ function Cover() {
       pos="relative"
     >
       <Box>
-        <Image src={logo} alt="Ristò Logo" w="140px" mb="60" />
+        <Image src={logo} alt="Ristò Logo" w="140px" mb="80" />
       </Box>
 
       <Link
         href="/"
         fontWeight="bold"
-        color="green.700"
+        color="teal.700"
         pos="absolute"
         top="30px"
         left="30px"

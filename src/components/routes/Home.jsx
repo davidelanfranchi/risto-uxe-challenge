@@ -20,7 +20,7 @@ function Home() {
 
         <Box flex="1">
           <Tabs isFitted variant="enclosed">
-            <TabList px={5}>
+            <TabList px={5} mb={5}>
               <Tab>Categories</Tab>
               <Tab>Ingredients</Tab>
             </TabList>

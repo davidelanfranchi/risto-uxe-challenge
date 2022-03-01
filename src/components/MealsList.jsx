@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Box, List, Alert, AlertIcon, Button } from "@chakra-ui/react";
+import { Box, List, Alert, AlertIcon, Button, Text } from "@chakra-ui/react";
 
 import MealListItem from "./MealListItem";
 
@@ -90,16 +90,28 @@ function MealsList(props) {
     );
   } else {
     return (
-      <List mb={[36, 36, 36, 20]}>
-        {items.map((item, index) => (
-          <MealListItem
-            key={`${props.filter}-${index}`}
-            meal={item}
-            isFirst={index === 0}
-            isLast={index === items.length - 1}
-          />
-        ))}
-      </List>
+      <>
+        <Text
+          size="sm"
+          color="teal.600"
+          fontWeight="semibold"
+          textAlign="right"
+          pb={2}
+          pr={10}
+        >
+          {items.length} meals
+        </Text>
+        <List mb={{ base: "36", lg: "20" }}>
+          {items.map((item, index) => (
+            <MealListItem
+              key={`${props.filter}-${index}`}
+              meal={item}
+              isFirst={index === 0}
+              isLast={index === items.length - 1}
+            />
+          ))}
+        </List>
+      </>
     );
   }
 }
