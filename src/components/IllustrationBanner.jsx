@@ -1,6 +1,4 @@
-import { Center, Box, AspectRatio, Image, Text } from "@chakra-ui/react";
-
-import orderPlacedIllustration from "./../img/Order-Placed-Illustration.png";
+import { Center, AspectRatio, Image, Text } from "@chakra-ui/react";
 
 function IllustrationBanner(props) {
   return (

@@ -24,7 +24,7 @@ function Placed() {
     <RoutesWrapper>
       <Flex direction="column" h="100%" overflow="scroll">
         <Header heading="Your order has been placed!" textAlignment="center" />
-        <Box flex="1">
+        <Box flex="1" mb={{ base: "36", lg: "20" }}>
           <IllustrationBanner
             image={orderPlacedIllustration}
             message={`You should be eating in <br>${mockWaitingTime()} minutes!`}

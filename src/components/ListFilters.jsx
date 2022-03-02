@@ -32,7 +32,7 @@ function ListFilters(props) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return (
-      <List>
+      <List mb={{ base: "36", lg: "20" }}>
         {[...Array(8)].map((item, index) => (
           <ListFiltersItem
             key={`${props.filter}-${index}`}
@@ -45,7 +45,7 @@ function ListFilters(props) {
     );
   } else {
     return (
-      <List>
+      <List mb={{ base: "36", lg: "20" }}>
         {items.map((item, index) => (
           <ListFiltersItem
             key={`${props.filter}-${index}`}

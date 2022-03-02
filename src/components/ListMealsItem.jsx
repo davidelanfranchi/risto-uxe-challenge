@@ -154,7 +154,7 @@ function ListItemMeal(props) {
       {!props.isLoading ? (
         <Modal isOpen={isOpen} onClose={onModalClose} size="sm">
           <ModalOverlay />
-          <ModalContent>
+          <ModalContent maxW="80%">
             <ModalHeader pr="50px">{props.meal.strMeal}</ModalHeader>
             <ModalCloseButton variant="outline" />
             <ModalBody>
