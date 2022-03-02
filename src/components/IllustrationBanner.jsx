@@ -7,10 +7,10 @@ function IllustrationBanner(props) {
     <Center textAlign="center" flexDirection="column">
       <AspectRatio
         w="100%"
-        maxW="300px"
+        maxW={{ base: "200px", lg: "300px" }}
         overflow="hidden"
         ratio={1 / 1}
-        mt={10}
+        mt={3}
       >
         <Image src={props.image} objectFit="cover" alt="" />
       </AspectRatio>
