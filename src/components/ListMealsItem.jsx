@@ -154,12 +154,13 @@ function ListItemMeal(props) {
       {!props.isLoading ? (
         <Modal isOpen={isOpen} onClose={onModalClose} size="sm">
           <ModalOverlay />
-          <ModalContent maxW="80%">
+          <ModalContent maxW={{ base: "80%", md: "24rem" }}>
             <ModalHeader pr="50px">{props.meal.strMeal}</ModalHeader>
             <ModalCloseButton variant="outline" />
             <ModalBody>
               <AspectRatio
                 maxW="400px"
+                mx="auto"
                 borderRadius={10}
                 overflow="hidden"
                 ratio={1 / 1}
