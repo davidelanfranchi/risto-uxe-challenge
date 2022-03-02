@@ -116,7 +116,7 @@ function ListItemMeal(props) {
                   : `Loading...`}
               </Text>
               <Text fontSize={"xs"} fontWeight="600" color="gray.400">
-                18.00 £
+                14.00 £
               </Text>
             </Skeleton>
           </Box>

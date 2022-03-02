@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
-import { Flex, Box, Button } from "@chakra-ui/react";
+import { Flex, Box, Button, Text } from "@chakra-ui/react";
 
 import RoutesWrapper from "./../RoutesWrapper";
 import Header from "./../Header";
@@ -28,6 +28,16 @@ function Review() {
     return Object.keys(order.meals).length;
   }
 
+  function getMockPrice() {
+    let price = 0;
+    let singlePrice = 14;
+    Object.keys(order.meals).forEach((mealId) => {
+      console.log(mealId);
+      price = price + singlePrice * order.meals[mealId].count;
+    });
+    return price;
+  }
+
   return (
     <RoutesWrapper>
       <Flex direction="column" h="100%" overflow="scroll">
@@ -39,7 +49,20 @@ function Review() {
               message="We can't serve you an empty plate! Go back and choose how to deal with your hunger."
             />
           ) : (
-            <OrderList />
+            <>
+              <OrderList />
+              <Text
+                size="sm"
+                color="teal.600"
+                fontWeight="semibold"
+                textAlign="right"
+                pt={8}
+                pr={10}
+                mb={{ base: "36", lg: "24" }}
+              >
+                Total: {getMockPrice()} £
+              </Text>
+            </>
           )}
         </Box>
       </Flex>
